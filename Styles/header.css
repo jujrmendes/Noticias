@@ -7,14 +7,12 @@
         gap: 8px;
     }
 
-    /*nesting css*/
     div:nth-child(2){
         margin-inline: auto;
     }
 
     div:nth-child(3) {
-       justify-self: end; 
-
+        justify-self: end; 
     }
 }
 
@@ -24,8 +22,3 @@
     border-inline: none;
     justify-content: space-between;
 }
-
-
-
-
-
