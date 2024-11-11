@@ -1,11 +1,14 @@
-section header {
+/* Section Header for Consistent Styling */
+section.header {
     border-top: 1px solid var(--stroke-color);
     padding-block: 12px 24px;
     font: var(--text-span);
 }
 
+/* General Link Styling */
 a {
-    justify-self: end;
+    display: flex;
+    justify-content: flex-end;
     align-items: center;
     gap: 8px;
 }
@@ -17,63 +20,91 @@ a span {
 }
 
 a:hover span {
-    background-image: url(../Assets/icons/ArrowRight.svg);
+    filter: brightness(1.2); /* Adds subtle hover effect */
 }
 
+/* Featured Section Styling */
 #featured {
     grid-area: featured;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Adjusts layout */
+    gap: 16px;
+    padding-block: 12px 24px;
 }
 
 #featured img {
     height: 100%;
     object-fit: cover;
+    border-radius: 4px;
 }
 
-#featured .card {
-    border-radius: 4px;
+/* Card Styling for Uniformity */
+.card {
     overflow: hidden;
     position: relative;
+    border-radius: 4px;
 }
 
-#featured .card::before {
+.card::before {
     content: "";
     position: absolute;
     inset: 0;
-    top: 50%;
     background: linear-gradient(180deg, transparent 0%, #020617 100%);
+    opacity: 0.7; /* Optional: Adjust overlay visibility */
 }
 
-#featured figcaption {
+/* Figure and Figcaption Styling */
+figure {
+    position: relative;
+    overflow: hidden;
+}
+
+figcaption {
     position: absolute;
     bottom: 0;
+    width: 100%;
     padding: 24px;
+    background-color: rgba(0, 0, 0, 0.7); /* Adds a semi-transparent background */
+    color: white;
 }
 
-#featured figcaption h2 {
+figcaption .text-lg {
+    padding: 12px;
+    font-size: 1.125rem;
+}
+
+figcaption h2 {
     margin-top: 8px;
+    font-size: 1rem;
 }
 
+/* Weekly Section */
 #weekly {
     grid-area: weekly;
+    display: grid;
+    gap: 16px;
 }
 
 #weekly > div {
     display: grid;
-    grid-template-columns: repeat(4, 292px);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
 }
 
 #weekly img {
     height: 160px;
-}
-
-#weekly figure {
-    position: relative;
+    border-radius: 4px;
+    object-fit: cover;
 }
 
 #weekly .content-tag {
     position: absolute;
     top: 8px;
     left: 8px;
+    padding: 4px 8px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 4px;
 }
 
 #weekly p {
@@ -81,34 +112,40 @@ a:hover span {
     font-weight: 800;
 }
 
+/* AI Section */
 #ai {
     grid-area: ai;
-
-    img {
-        width: 176px;
-        aspect-ratio: 1/1;
-        object-fit: cover;
+    display: grid;
+    gap: 16px;
 }
 
-    h3 {
+#ai img {
+    width: 176px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+#ai h3 {
     margin-block: 8px 4px;
 }
-}
+
+/* More Section */
 aside {
     grid-area: aside;
 }
 
 #more {
     margin-top: 32px;
+}
 
-    h3 {
-        margin-top: 8px;
-    }
+#more h3 {
+    margin-top: 8px;
+}
 
-    img {
-        width: 72px;
-        aspect-ratio: 1/1;
-        object-fit: cover;
-    }
-        
+#more img {
+    width: 72px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 4px;
 }
